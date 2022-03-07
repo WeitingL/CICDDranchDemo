@@ -1,0 +1,19 @@
+version: 2.1
+
+orbs:
+  android: circleci/android@1.0.3
+
+jobs:
+  build-and-test:
+    executor:
+      name: android/android-machine
+
+    steps:
+      - run:
+          name: test for echo
+          command: echo Hi
+
+workflows:
+  sample: 
+    jobs:
+      - build-and-test
